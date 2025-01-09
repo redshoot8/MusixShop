@@ -1,0 +1,68 @@
+#basket-table {
+    width: 80%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border: 1px solid #ffffff;
+    border-left: none;
+    border-right: none;
+}
+
+#basket-table tr th {
+    display: table-cell;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+    border-left: none;
+    border-right: none;
+}
+
+#basket-table tr td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ffffff;
+    border-left: none;
+    border-right: none;
+}
+
+.product-image {
+    width: 20%;
+}
+
+.product-image img {
+    width: 50%;
+    border-radius: 35px;
+}
+
+.actions {
+    display: flex;
+}
+
+.actions button {
+    border: none;
+    background: none;
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+}
+
+#basket-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 80%;
+    gap: 2%;
+}
+
+#basket-total button {
+    width: 20%;
+    border-radius: 35px;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+#total-price {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2rem;
+}
