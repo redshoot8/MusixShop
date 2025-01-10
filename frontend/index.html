@@ -1,10 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusixShop - Домашняя страница</title>
+    <link rel="shortcut icon" href="assets/icons/logo.svg">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="scripts_js/scripts.js"></script>
 </head>
 <body>
-$END$
+    <!-- Хэдер -->
+    <header class="header">
+        <div class="container">
+            <div id="header-div">
+                <div>
+                    <div id="logo">
+                        <h1>MusixShop</h1>
+                        <img src="assets/icons/logo.svg">
+                    </div>
+                    <nav class="navbar">
+                        <ul class="nav-links">
+                            <li><a id="active-page" href="#">Домашняя страница</a></li>
+                            <li><a href="shop.html">Магазин</a></li>
+                            <li><a href="faq.html">Частые вопросы</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <a href="login_page.html" id="auth-link"><button>Войти</button></a>
+                <div id="authorized-user">
+                    <p>user@example.com</p>
+                    <a><img src="assets/icons/user.svg" alt=""></a>
+                    <a href="basket.html"><img src="assets/icons/basket.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+
+        <section id="hero">
+            <div class="hero-content">
+                <h2>MusixShop</h2>
+                <p>Поставь крест на плохих музыкальных инструментах</p>
+                <a href="shop.html" class="cta">Начать покупки</a>
+            </div>
+        </section>
+
+        <section id="advantages">
+            <div class="container">
+                <h2 class="h2-title">Наши преимущества</h2>
+                <div class="advantages-container">
+                    <div>
+                        <h2>Широкий ассортимент</h2>
+                        <p>У нас вы найдете инструменты для любых жанров музыки – от классики до рока</p>
+                    </div>
+
+                    <div>
+                        <h2>Премиум-качество</h2>
+                        <p>Мы предлагаем продукцию ведущих мировых брендов</p>
+                    </div>
+
+                    <div>
+                        <h2>Консультации от экспертов</h2>
+                        <p>Наша команда всегда готова помочь вам с выбором</p>
+                    </div>
+
+                    <div>
+                        <h2>Выгодные предложения</h2>
+                        <p>Скидки, акции и подарки для наших клиентов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info">
+            <div class="container">
+                <h2 class="h2-title">О нас</h2>
+                <p>Мы – профессионалы, которые любят музыку и знают, как важно выбрать инструмент,
+                   который станет вашим идеальным спутником в творческом пути. Наш магазин работает уже более 10 лет,
+                   предлагая своим клиентам только лучшее. У нас могут найти свой идеальный инструмент как новички,
+                   так и профессиональные музыканты.</p>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <div class="container">
+                <h2 class="h2-title">Отзывы клиентов</h2>
+                <div class="reviews-container">
+                    <div>
+                        <h2>Дмитрий</h2>
+                        <p>"Купил здесь свою первую гитару, консультанты помогли выбрать идеальную модель."</p>
+                    </div>
+
+                    <div>
+                        <h2>Юлия</h2>
+                        <p>"Отличное качество инструментов и приятные цены."</p>
+                    </div>
+
+                    <div>
+                        <h2>Сергей</h2>
+                        <p>"Давно мечтал о хороших ударных, ваш магазин помог мне осуществить мою мечту."</p>
+                    </div>
+
+                    <div>
+                        <h2>Мария</h2>
+                        <p>"Профессионально играю на фортепиано и даже не открываю сайты других магазинов,
+                           когда речь заходит о покупке нового инструмента."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MusixShop. Все права защищены.</p>
+            <p>Напишите нам: info@musixshop.com</p>
+        </div>
+    </footer>
 </body>
 </html>

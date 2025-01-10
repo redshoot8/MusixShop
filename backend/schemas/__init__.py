@@ -1,3 +1,3 @@
-import backend.schemas.genre
-import backend.schemas.manga
+import backend.schemas.product
 import backend.schemas.user
+import backend.schemas.token

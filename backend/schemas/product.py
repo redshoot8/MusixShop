@@ -9,6 +9,8 @@ class ProductBase(BaseModel):
     price: int = Field(ge=0)
     description: str | None = None
     image_url : str | None = None
+    quantity: int | None
+    characteristics: dict | None
 
 
 class ProductCreate(ProductBase):

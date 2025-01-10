@@ -1,7 +1,9 @@
 import datetime
 from typing import Annotated
-from sqlalchemy import text, ForeignKey
+from sqlalchemy import text
+from enum import Enum
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.dialects.postgresql import JSON
 from backend.database.database import Base
 
 
@@ -30,60 +32,45 @@ class BaseModel(Base):
     updated_at: Mapped[updated_at]
 
 
-class M2MUserManga(BaseModel):
-    __tablename__ = 'm2m_user_manga'
-
-    id_user: Mapped[int] = mapped_column(ForeignKey('user.id'), nullable=False)
-    id_manga: Mapped[int] = mapped_column(ForeignKey('manga.id'), nullable=False)
-    last_read_chapter: Mapped[int] = mapped_column(ForeignKey('manga_chapter.id'), nullable=False)
-
-
-class M2MMangaGenre(BaseModel):
-    __tablename__ = 'm2m_manga_genre'
-
-    id_manga: Mapped[int] = mapped_column(ForeignKey('manga.id'), nullable=False)
-    id_genre: Mapped[int] = mapped_column(ForeignKey('genre.id'), nullable=False)
-
-
 class User(BaseModel):
     __tablename__ = 'user'
 
     # Auth info
-    username: Mapped[unique_str]
+    email: Mapped[unique_str]
     hashed_password: Mapped[str]
 
-    # Main fields
-    description: Mapped[optional_str]
+
+class ProductType(Enum):
+    # Instruments
+    electric_guitar = 'electric-guitar'
+    acoustic_guitar = 'acoustic-guitar'
+    drum = 'drum'
+    digital_piano = 'digital-piano'
+    acoustic_piano = 'acoustic-piano'
+
+    # Devices
+    microphone = 'microphone'
+    headphone = 'headphone'
+    sound_system = 'sound-system'
+    sound_card = 'sound-card'
+    combo_amplifier = 'combo-amplifier'
+
+    # Accessories
+    mediator = 'mediator'
+    string = 'string'
+    drumstick = 'drumstick'
+    cover = 'cover'
+    chair = 'chair'
 
 
-class Manga(BaseModel):
-    __tablename__ = 'manga'
+class Product(BaseModel):
+    __tablename__ = 'product'
 
     # Main fields
     title: Mapped[unique_str]
+    product_type: Mapped[ProductType]
+    price: Mapped[int]
     description: Mapped[optional_str]
-
-
-class MangaChapter(BaseModel):
-    __tablename__ = 'manga_chapter'
-
-    # Main fields
-    id_manga: Mapped[int] = mapped_column(ForeignKey('manga.id'), nullable=False)
-    number: Mapped[int]
-    title: Mapped[str]
-
-
-class MangaPage(BaseModel):
-    __tablename__ = 'manga_page'
-
-    # Main fields
-    id_chapter: Mapped[int] = mapped_column(ForeignKey('manga_chapter.id'), nullable=False)
-    number: Mapped[int]
-    image: Mapped[unique_str]
-
-
-class Genre(BaseModel):
-    __tablename__ = 'genre'
-
-    # Main fields
-    name: Mapped[unique_str]
+    image_url: Mapped[optional_str]
+    quantity: Mapped[int] = mapped_column(nullable=True)
+    characteristics: Mapped[dict] = mapped_column(type_=JSON, nullable=True)

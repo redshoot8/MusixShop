@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background: #1f1f1f;
+    padding: 1rem 0;
+}
+
+#header-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#logo img {
+    width: 3vw;
+    animation: pulse 0.5s infinite ease-in-out;
+}
+
+#logo h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+    font-size: 1.25rem;
+}
+
+.nav-links li a:hover {
+    color: #ff5722;
+}
+
+#active-page {
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #ff5722;
+}
+
+#auth-link {
+    align-self: center;
+}
+
+#auth-link button {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+#authorized-user {
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#authorized-user p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    align-self: center;
+}
+
+#authorized-user a {
+    align-content: center;
+}
+
+#authorized-user a img {
+    width: 3vw;
+}
+
+button {
+    background-color: #ff5722;
+    border: none;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+.h2-title {
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #ff5722;
+}
+
+.custom-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 3px solid #ff5722;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.custom-notification button {
+    padding: 10px 20px;
+    border: 1px solid #ff5722;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #1f1f1f;
+    cursor: pointer;
+}
+
+.custom-notification button:hover {
+    background-color: #ff5722;
+}
+
+/* Footer */
+footer {
+    background: #1f1f1f;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

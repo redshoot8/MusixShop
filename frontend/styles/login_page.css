@@ -1,0 +1,61 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+}
+
+#auth-form {
+    margin-block: 30px;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#auth-form label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#auth-form input {
+    height: 2rem;
+    border: 3px solid #ff5722;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+#auth-form button {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+}
+
+#auth-form div {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#auth-form div p {
+    font-size: 1.25rem;
+}
+
+
+#auth-form div a {
+    font-size: 1.25rem;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #ff5722;
+}
+
+#auth-form a:hover {
+    color: #ff5722;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,55 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap: 20px;
+    max-width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    border-radius: 35px;
+    max-width: 100%;
+}
+
+.card:hover {
+    border: 2px solid #ff5722;
+}
+
+.card img {
+    margin: none;
+    margin-top: 5%;
+    align-self: center;
+    width: 90%;
+    height: auto;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+.card p {
+    margin: 0 0 0 5%;
+}
+
+.card p:nth-of-type(1) {
+    font-size: 2rem;
+}
+
+.card p:nth-of-type(2) {
+    color: #ff5722;
+}
+
+.card h2 {
+    margin: 0 5% 0 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card button {
+    align-self: center;
+    margin: 5% 0 10% 0;
+    border-radius: 35px;
+    bottom: 0;
+    width: 80%;
+}

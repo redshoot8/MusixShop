@@ -1,11 +1,13 @@
 fastapi
 uvicorn
 pydantic
+pydantic[email]
 pydantic-settings
 sqlalchemy
 alembic
 asyncpg
-authx
 passlib[bcrypt]
+pyjwt
+python-multipart
 httpx
 pytest-asyncio

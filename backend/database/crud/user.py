@@ -2,13 +2,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy import delete, update
-
 from backend.database.models import User
 from backend.schemas.user import UserUpdate
 
 
-async def create_user(session: AsyncSession, username, hashed_password) -> User:
-    new_user = User(username=username, hashed_password=hashed_password)
+async def create_user(session: AsyncSession, email, hashed_password) -> User:
+    new_user = User(email=email, hashed_password=hashed_password)
     session.add(new_user)
     try:
         await session.commit()
@@ -24,8 +23,8 @@ async def get_user_by_id(session: AsyncSession, user_id: int) -> User | None:
     return result.scalars().first()
 
 
-async def get_user_by_username(session: AsyncSession, username: str) -> User | None:
-    result = await session.execute(select(User).where(User.username == username))
+async def get_user_by_email(session: AsyncSession, email: str) -> User | None:
+    result = await session.execute(select(User).where(User.email == email))
     return result.scalars().first()
 
 

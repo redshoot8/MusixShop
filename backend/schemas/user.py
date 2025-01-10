@@ -1,18 +1,18 @@
-from pydantic import BaseModel, SecretStr
+from pydantic import BaseModel, SecretStr, EmailStr, Field
 from datetime import datetime
 
 
 class UserBase(BaseModel):
-    username: str
+    email: EmailStr = Field(max_length=120)
 
 
 class UserCreate(UserBase):
-    password: SecretStr
+    password: SecretStr = Field(min_length=8, max_length=24)
 
 
 class UserUpdate(UserBase):
-    username: str | None = None
-    password: SecretStr | None = None
+    email: EmailStr | None = Field(default=None, max_length=120)
+    password: SecretStr | None = Field(default=None, min_length=8, max_length=24)
 
 
 class User(UserBase):

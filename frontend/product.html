@@ -1,10 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusixShop - Товар</title>
+    <link rel="shortcut icon" href="assets/icons/logo.svg">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/product.css">
+    <script src="scripts_js/scripts.js"></script>
+    <script src="scripts_js/product.js"></script>
 </head>
 <body>
-$END$
+    <!-- Хэдер -->
+    <header class="header">
+        <div class="container">
+            <div id="header-div">
+                <div>
+                    <div id="logo">
+                        <h1>MusixShop</h1>
+                        <img src="assets/icons/logo.svg">
+                    </div>
+                    <nav class="navbar">
+                        <ul class="nav-links">
+                            <li><a href="index.html">Домашняя страница</a></li>
+                            <li><a id="active-page" href="shop.html">Магазин</a></li>
+                            <li><a href="faq.html">Частые вопросы</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <a href="login_page.html" id="auth-link"><button>Войти</button></a>
+                <div id="authorized-user">
+                    <p>user@example.com</p>
+                    <a><img src="assets/icons/user.svg" alt=""></a>
+                    <a href="basket.html"><img src="assets/icons/basket.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+
+        <section id="product">
+            <div class="container">
+                <h2 id="product-title"></h2>
+                <p id="product-type"></p>
+                <div id="product-front">
+                    <img id="product-img">
+                    <div>
+                        <div>
+                            <p id="product-price"></p>
+                            <button id="addButton">Добавить</button>
+                        </div>
+                        <div>
+                            <p id="product-quantity"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="product-info">
+                    <h3>Описание</h3>
+                    <p id="product-description"></p>
+
+                    <h3>Характеристики</h3>
+                    <div id="product-characteristics"></div>
+                </div>
+            </div>
+        </section>
+
+        <div id="notification" class="custom-notification"></div>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MusixShop. Все права защищены.</p>
+            <p>Напишите нам: info@musixshop.com</p>
+        </div>
+    </footer>
 </body>
 </html>
